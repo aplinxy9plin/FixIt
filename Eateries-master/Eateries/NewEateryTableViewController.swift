@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -59,6 +60,36 @@ class NewEateryTableViewController: UITableViewController, UIImagePickerControll
             
             
             
+//            ///ALAMOFIRE UPLOAD
+//            let fullUrl = "http://arteri.pro:1337/create?"
+//            Alamofire.upload(
+//                .POST,
+//                URLString: fullUrl, // http://httpbin.org/post
+//                multipartFormData: { multipartFormData in
+//                    multipartFormData.appendBodyPart(fileURL: imagePathUrl!, name: "photo")
+//                    multipartFormData.appendBodyPart(data: Constants.AuthKey.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"authKey")
+//                    multipartFormData.appendBodyPart(data: "\(16)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"id")
+//                    multipartFormData.appendBodyPart(data: "info".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"info")
+//                    multipartFormData.appendBodyPart(data:"\(0.00)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"lat")
+//                    multipartFormData.appendBodyPart(data:"\(0.00)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"lng")
+//                    multipartFormData.appendBodyPart(data:"Moscow".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"address")
+//
+//                    multipartFormData.appendBodyPart(data:"\(0.00)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"likes")
+//
+//                    multipartFormData.appendBodyPart(data:"\(0.00)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"type")
+//            },
+//                encodingCompletion: { encodingResult in
+//                    switch encodingResult {
+//                    case .Success(let upload, _, _):
+//                        upload.responseJSON { request, response, JSON, error in
+//
+//
+//                        }
+//                    case .Failure(let encodingError):
+//
+//                    }
+//            }
+//            )
             
             
             performSegue(withIdentifier: "unwindSegueFromNewEatery", sender: self)

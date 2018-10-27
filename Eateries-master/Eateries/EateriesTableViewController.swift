@@ -12,8 +12,9 @@ import Alamofire
 
 class EateriesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var restaurants: [Restaurant] = []
-    
+    var restaurants: [Restaurant] = [
+//        Helps(name: "MacDonalds", type: "restoraunt", location: "Kiev, Mihayla Lomonosova Str., 41", image: "1.png", isVisited: false)
+    ]
     var fetchResultsController: NSFetchedResultsController<Restaurant>!
     // for search
     var searchController: UISearchController!
@@ -39,16 +40,17 @@ class EateriesTableViewController: UITableViewController, NSFetchedResultsContro
         
         
         /////////ALAMOFIRE DATA
-//        let url = "http://arteri.pro:1337/get_all"
-//        Alamofire.request(url).responseJSON { (response) in
-//            if let responseValue = response.result.value as! [String: Any]? {
-//                if let responseInfo = responseValue["data"] as! [[String:Any]]? {
-//                    self.info = responseInfo
-//                    self.tableView?.reloadData()
-//                }
-//            }
-//
-//        }
+        let url = "http://arteri.pro:1337/get_all"
+        Alamofire.request(url).responseJSON { (response) in
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let responseInfo = responseValue["data"] as! [[String:Any]]? {
+                    self.info = responseInfo
+                    self.tableView?.reloadData()
+                    print(responseInfo)
+                }
+            }
+
+        }
         
         
         
